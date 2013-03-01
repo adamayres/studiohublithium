@@ -11,9 +11,7 @@
         <meta name="viewport" content="width=device-width">
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <link rel="stylesheet" href="styles/main.css">
-        <!-- build:js scripts/vendor/modernizr.js -->
-        <script src="components/modernizr/modernizr.js"></script>
-        <!-- endbuild -->
+        <script src="scripts/vendor/modernizr.js"></script>
     </head>
     <body>
         <div class="container">
@@ -34,12 +32,7 @@
 
 
         
-        <!-- build:js scripts/main.js -->
-        <script src="components/external/base64.js"></script>
-        <script src="components/external/handlebars.js"></script>
-        <script data-main="scripts/main" src="components/requirejs/require.js"></script>
-        
-        <!-- endbuild -->
+        <script data-main="scripts/main" src="scripts/vendor/require.js"></script>
 
         <script id="component-template" type="text/x-handlebars-template">
             <div class="component">
