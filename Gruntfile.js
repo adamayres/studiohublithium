@@ -83,6 +83,9 @@ module.exports = function (grunt) {
                 }
             }
         },
+        livereload: {
+            port: 35728
+        },
         open: {
             server: {
                 path: 'http://localhost:<%= connect.options.port %>'

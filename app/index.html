@@ -17,17 +17,7 @@
     </head>
     <body>
         <div class="container">
-            <div class="hero-unit">
-                <h1>'Allo, 'Allo!</h1>
-                <p>You now have</p>
-                <ul>
-                    <li>HTML5 Boilerplate</li>
-                    <li>Twitter Bootstrap</li>
-                    <li>RequireJS</li>
-                </ul>
-                <p>installed.</p>
-                <h3>Enjoy coding! - Yeoman</h3>
-            </div>
+            <div id="content"></div>
         </div>
 
         <!--[if lt IE 7]>
@@ -42,8 +32,21 @@
             s.parentNode.insertBefore(g,s)}(document,'script'));
         </script>
 
+        <script data-main="scripts/main" src="scripts/vendor/base64.js"></script>
+        <script data-main="scripts/main" src="scripts/vendor/handlebars.js"></script>
+        
         <!-- build:js scripts/main.js -->
         <script data-main="scripts/main" src="components/requirejs/require.js"></script>
+        
         <!-- endbuild -->
+
+        <script id="component-template" type="text/x-handlebars-template">
+            <div class="component">
+                <img src="{{image}}" />
+                <span class="name">Component: {{name}}</span>
+                <span class="description">Description: {{description}}</span>
+                <span class="author">Author: {{author}}</span>
+            </div>
+        </script>
 </body>
 </html>
