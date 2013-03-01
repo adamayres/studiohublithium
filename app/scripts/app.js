@@ -1,5 +1,5 @@
 /*global define */
-define(['jquery'], function () {
+define(['jquery', 'handlebars', 'Base64'], function () {
     'use strict';
 
 	var components = [];
