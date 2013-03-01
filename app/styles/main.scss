@@ -82,6 +82,18 @@ footer ul {
 	float: left;
 }
 
+.subtitle {
+	color: white;
+	font-size: 30px;
+	font-style: italic;
+	font-variant: small-caps;
+	margin-left: 140px;
+
+}
+
+#content {
+	min-height: 300px;
+}
 
 .components {
 	margin-top: 10px;
@@ -100,7 +112,8 @@ footer ul {
 	}
 	.meta {
 		float: left;
-		span, a {
+		
+		.name, .description, .author {
 			display: block;
 
 		}

@@ -13,6 +13,7 @@ define(['jquery'], function () {
 				repoCountdown = response.data.repositories.length;
 				$.each(response.data.repositories, function() {	
 					var baseEditUrl = "https://github.com/" + this.owner + "/" + this.name + "/edit/master/";
+					var forkUrl = "https://github.com/" + this.owner + "/" + this.name;
 					var baseConentsUrl = "https://api.github.com/repos/" + this.owner + "/" + this.name + "/contents/";			
 					$.ajax({
 						dataType: "jsonp",
@@ -24,6 +25,9 @@ define(['jquery'], function () {
 							$.each(descriptor.components, function(i, component) {
 								component.contentsUrl = baseConentsUrl + component.location;
 								component.editUrl = baseEditUrl + component.location;
+								component.forkUrl = forkUrl;
+								component.fakeKudosCount = Math.floor(Math.random()*55+34) + "";
+								component.fakeCommunityCount = Math.floor(Math.random()*55+34) + "";
 								components.push(component);
 							});
 						}
@@ -41,7 +45,7 @@ define(['jquery'], function () {
 		});
 
 		//cachedComponents = [{"name":"Hello World","description":"Test component that outputs Hello World","author":"Adam Ayres","location":"components/helloworld.ftl","image":"https://raw.github.com/adamayres/lithium/master/components/helloworld.jpeg"},{"description":"DBSHJCBDH","location":"components/testmodal.ftl","name":"testing1"},{"description":"give us feedback now!","location":"components/Feedback_Survey.ftl","name":"survey for admin feedback","image":"https://raw.github.com/chhamajain/lithium/master/components/Feedback_Survey.png"},{"description":"sidebar for communities","location":"components/FBSidebar.ftl","name":"Facebook sidebar","image":"https://raw.github.com/chhamajain/lithium/master/components/FBSidebar.png"},{"test":"test"},{"description":"this is a test component","location":"components/newcomponent.ftl","name":"test component"},{"description":"Awesome component","location":"components/test.ftl","name":"This is for Chhama"},{"description":"djhsjlkdjs","location":"components/testmodal.ftl","name":"tsting"},{"description":"rretregfddb","location":"components/testmodal.ftl","name":"testing2"},{"description":"Lithium lithium lithium","location":"components/jacy.ftl","name":"This is a new name for the component"},{"description":"rretregfddb","location":"components/testmodal.ftl","name":"testing2"},{"description":"hdskjacs","location":"components/testmodal.ftl","name":"testing3"},{"description":"fdsfsfs","location":"components/testmodal.ftl","name":"dsfdsfdsf"},{"description":"sfdsfd","location":"components/test.ftl","name":"sfdsf"},{"description":"sdsfv","location":"components/test.ftl","name":"tetreu"},{"description":"let's share it","location":"components/new-component.ftl","name":"this is a new component"},{"description":"dfsdsf","location":"components/test.ftl","name":"df"},{"description":"xzbhckc","location":"components/testmodal.ftl","name":"test678"},{"description":"dsfg","location":"components/test.ftl","name":"dsff"},{"description":"dggfd","location":"components/testmodal.ftl","name":"df"},{"description":"rrrh","location":"components/testmodal.ftl","name":"ret"},{"description":"hhg","location":"components/test.ftl","name":"gtr"},{"description":"sadfasdf asdf","location":"components/studiohub.ftl","name":"aiososdfa;jfdsap;"},{"description":"this is for you","location":"components/feedback.ftl","name":"admin feedback"}];
-		cachedComponents = localStorage.getItem("components");
+		//cachedComponents = localStorage.getItem("components");
 		
 		if (cachedComponents) {
 			//components = cachedComponents;
@@ -64,7 +68,6 @@ define(['jquery'], function () {
 				});
 
 				element.append(componentList);
-				console.log(JSON.stringify(components));
 				localStorage.setItem("components", JSON.stringify(components));	
 			}
 			
