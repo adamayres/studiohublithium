@@ -43,10 +43,12 @@
 
         <script id="component-template" type="text/x-handlebars-template">
             <div class="component">
-                <img src="{{image}}" />
-                <span class="name">Component: {{name}}</span>
-                <span class="description">Description: {{description}}</span>
-                <span class="author">Author: {{author}}</span>
+                <img class="img-polaroid" src="{{image}}" />
+                <div class="meta">
+                    <span class="name">Component: {{name}}</span>
+                    <span class="description">Description: {{description}}</span>
+                    <span class="author">Author: {{author}}</span>
+                </div>
             </div>
         </script>
 </body>
