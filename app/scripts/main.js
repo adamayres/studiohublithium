@@ -13,7 +13,7 @@ require.config({
 
 require(['app', 'jquery', 'bootstrap'], function (app, $) {
     'use strict';
-
+    console.log(app)
     var $content = $("#content");
     app($content);
 });
