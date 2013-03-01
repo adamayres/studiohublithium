@@ -55,7 +55,6 @@ define(['jquery'], function () {
 					componentList.append(renderedComponent);
 				});
 				element.append(componentList);
-				debugger;
 				console.log(JSON.stringify(components));
 				localStorage.setItem("components", JSON.stringify(components));	
 			}
