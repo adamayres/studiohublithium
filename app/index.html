@@ -6,7 +6,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title></title>
+        <title>Lithium Studio Hub</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -16,24 +16,36 @@
         <!-- endbuild -->
     </head>
     <body>
+        <header class="masthead">
+            <div class="logo">
+                <a href="http://studiohublithium.com"></a>
+            </div>
+        </header>
         <div class="container">
             <div id="content"></div>
         </div>
+        <footer class="site-info">
+            <nav class="nav-legal" role="note">
+                <div class="wrapper">
+                    <small class="ff-din">© Lithium Technologies Inc. 2013</small>
+                    <ul class="ff-din">
+                        <li><a href="/site-map">site map</a></li>
+                        <li><a href="/privacy">privacy</a></li>
+                        <li><a href="/security">security</a></li>
+                        <li><a href="/privacy#cookies">cookies</a></li>
+                        <li><a href="/disclaimer">disclaimer</a></li>
+                    </ul>
+                <div class="footer-logos">
+
+                </div><!--.footer-logos-->
+                </div><!--.wrapper-->
+            </nav>
+        </footer>
 
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));
-        </script>
-
-
-        
         <!-- build:js scripts/main.js -->
         <script src="components/external/base64.js"></script>
         <script src="components/external/handlebars.js"></script>
@@ -48,6 +60,8 @@
                     <span class="name">Component: {{name}}</span>
                     <span class="description">Description: {{description}}</span>
                     <span class="author">Author: {{author}}</span>
+                    <a class="add" href="{{contentsUrl}}">Add</a>
+                    <a class="edit" href="{{editUrl}}" target="_blank">Edit</a>
                 </div>
             </div>
         </script>

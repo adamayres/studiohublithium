@@ -1,12 +1,90 @@
 @import '../components/sass-bootstrap/lib/bootstrap.scss';
 
 
-.hero-unit {
-    margin: 50px auto 0 auto;
-    width: 300px;
+.masthead {
+    position: relative;
+    background: #ce0058;
+    height: 86px;
+    z-index: 2;
 }
 
+.logo {
+    float: left;
+    margin: 25px 0 25px 36px;
+    background: transparent url(http://lithium.com/assets/images/logo-hdr-lithium.png) no-repeat;
+    text-indent: -9999px;
+}
+
+.logo a {
+    width: 153px;
+    height: 36px;
+    display: block;
+}
+
+.site-info .nav-sitemap {
+    background: url(http://lithium.com/assets/images/bkgd-footer-stripe.png) 0 0 repeat-x #e5e2de;
+    padding: 45px 0 20px 0
+}
+
+.site-info .nav-legal {
+	height: 70px;
+    background: #212721;
+    overflow:hidden;
+}
+
+.nav-legal ul {
+	width: 400px;
+    overflow:hidden;
+}
+
+.nav-legal small,
+.nav-legal a {
+    color:#b6ada5;
+    font-size: 11px;
+    line-height: 11px;
+    text-decoration: none;
+}
+
+.nav-legal small,
+.nav-legal li {
+    float: left;
+    margin: 14px 0 10px 0 ;
+    display: block;
+}
+
+.nav-legal small {
+    margin: 13px 25px 0 25px;
+    padding-bottom: 13px;
+    font-size: 12px;
+    line-height: 12px;
+}
+
+.nav-legal a {
+    display: block;
+    padding:0 7px;
+    border-right:1px solid #b6ada5;
+}
+
+.nav-legal a:hover {
+	color: #ce0058
+}
+
+.nav-legal .footer-logos {
+	float: right;
+	width: 261px;
+	height: 41px;
+	margin-right: 100px;
+	margin-top: 10px;
+	background: url(http://lithium.com/assets/images/footer-logo-sprite.jpg) no-repeat
+}
+
+footer ul {
+	float: left;
+}
+
+
 .components {
+	margin-top: 10px;
 	ul, li { 
 		list-style-type: none;
 		clear: both;
@@ -22,9 +100,12 @@
 	}
 	.meta {
 		float: left;
-		span {
+		span, a {
 			display: block;
 
+		}
+		a.add { 
+			display: none;
 		}
 	}
 }

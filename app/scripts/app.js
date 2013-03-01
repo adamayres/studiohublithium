@@ -11,15 +11,19 @@ define(['jquery'], function () {
 			url: "https://api.github.com/legacy/repos/search/lithiumrepo",
 			success: function(response) {
 				repoCountdown = response.data.repositories.length;
-				$.each(response.data.repositories, function() {					
+				$.each(response.data.repositories, function() {	
+					var baseEditUrl = "https://github.com/" + this.owner + "/" + this.name + "/edit/master/";
+					var baseConentsUrl = "https://api.github.com/repos/" + this.owner + "/" + this.name + "/contents/";			
 					$.ajax({
 						dataType: "jsonp",
 						//https://api.github.com/repos/adamayres/lithium/contents/package.json?callback=test
-						url: "https://api.github.com/repos/" + this.owner + "/" + this.name + "/contents/package.json",
+						url: baseConentsUrl + "package.json",
 						success: function(response) {
 							var descriptor = $.parseJSON(Base64.decode(response.data.content));
 							repoCountdown--;
 							$.each(descriptor.components, function(i, component) {
+								component.contentsUrl = baseConentsUrl + component.location;
+								component.editUrl = baseEditUrl + component.location;
 								components.push(component);
 							});
 						}
@@ -55,10 +59,10 @@ define(['jquery'], function () {
 				componentTemplate = Handlebars.compile(componentSource);
 
 				$.each(components, function(i, component) {
-					component.image = component.image || "images/no-image.png";
+					component.image = component.image || "http://studiohublithium.com/images/no-image.png";
 					componentList.append("<li>" + componentTemplate(component) + "</li>");
 				});
-				
+
 				element.append(componentList);
 				console.log(JSON.stringify(components));
 				localStorage.setItem("components", JSON.stringify(components));	
